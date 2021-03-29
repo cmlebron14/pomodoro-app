@@ -1,0 +1,40 @@
+@mixin heading-1 {
+	font-size: 100px;
+	font-weight: bold;
+	letter-spacing: -5px;
+	line-height: 120px;
+}
+
+@mixin heading-2 {
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 34px;
+}
+
+@mixin heading-3 {
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 15px;
+	line-height: 19px;
+	text-transform: uppercase;
+}
+
+@mixin heading-4 {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 5px;
+	line-height: 16px;
+	text-transform: capitalize;
+}
+
+@mixin body-text-1 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 18px;
+}
+
+@mixin body-text-2 {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 14px;
+}
