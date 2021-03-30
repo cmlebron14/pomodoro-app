@@ -7,27 +7,85 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="./styles/css/main.css">
   
-  <title>Pomodoro</title>
+  <title>Pomodoro Timer</title>
 </head>
 <body>
-  pomodoro
-  short break
-  long break
+  <header class="section section-header">
+    <img src="./assets/logo.svg" alt="pomodoro" class="logo-icon">
+  </header>
+  <nav class="section section-nav">
+    <ul class="nav">
+      <li class="nav-tab active"><a href="">pomodoro</a></li>
+      <li class="nav-tab"><a href="">short break</a></li>
+      <li class="nav-tab"><a href="">long break</a></li>
+    </ul>
+  </nav>
+  <main class="section section-main">
+    <div class="timer">
+      <div class="svg-placeholder"></div>
+      <div class="timer-content">
+        <span class="time">17:59</span>
+        <span class="label">pause</span>
+      </div>
+    </div>
+  </main>
+  <footer class="section section-footer">
+    <img src="./assets/icon-settings.svg" alt="gear icon" class="settings-icon">
+    <section class="settings-modal">
+      <div class="settings-heading">
+        <h2>Settings</h2>
+        <span class="close-placeholder">x</span>
+      </div>
+      <form action="" class="settings-form">
+        <div class="time-section">
+          <h4>Time (minutes)</h4>
+          <div class="time-dropdowns">
+            <div class="dropdown-group">
+              <label for="pomodoro">pomodoro</label>
+              <select name="pomodoro" id="pomodoro">
+                <option value="20">20</option>
+                <option value="25" selected="selected">25</option>
+                <option value="30">30</option>
+              </select>
+            </div>
+            <div class="dropdown-group">
+              <label for="short-break">short break</label>
+              <select name="short-break" id="short-break">
+                <option value="3">3</option>
+                <option value="5" selected="selected">5</option>
+                <option value="9">9</option>
+              </select>
+            </div>
+            <div class="dropdown-group">
+              <label for="long-break">long break</label>
+              <select name="long-break" id="long-break">
+                <option value="10">10</option>
+                <option value="15" selected="selected">15</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div> <!-- end time dropdowns -->
+        </div> <!-- end time section -->
+        <div class="font-section">
+          <h4>Font</h4>
+          <div class="font-radios">
+            <input type="radio" name="font" id="sans" value="sans">
+            <input type="radio" name="font" id="slab" value="slab">
+            <input type="radio" name="font" id="mono" value="mono">
+          </div>
+        </div> <!-- end font section -->
+        <div class="color-section">
+          <h4>Color</h4>
+          <div class="color-radios">
+            <input type="radio" name="color" id="red" value="red">
+            <input type="radio" name="color" id="blue" value="blue">
+            <input type="radio" name="color" id="purple" value="purple">
+          </div>
+        </div> <!-- end color section -->
+        <button type="submit" class="settings-button">Apply</button>
+      </form>
+    </section> <!-- end settings modal -->
+  </footer>
 
-  start 
-  pause
-  restart
-
-  Settings
-
-  Time (minutes)
-  pomodoro
-  short break
-  long break
-
-  Font
-  Color
-
-  Apply
 </body>
 </html>
