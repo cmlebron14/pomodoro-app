@@ -1,3 +1,4 @@
+/******************** GENERAL ********************/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,51 +11,60 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
-.section {
-  display: flex;
+header,
+nav,
+main,
+footer {
   align-items: center;
+  display: flex;
   justify-content: center;
 }
-.section-header {
-  padding: 55px 0 58px;
+
+/******************** LOGO ********************/
+.logo-icon {
+  margin: 55px 0 58px;
 }
-.section-nav .nav {
+
+/******************** NAV ********************/
+.nav {
   background: #161932;
   border-radius: 31.5px;
   display: flex;
   list-style-type: none;
+  position: relative;
   padding: 8px;
+  z-index: 1;
 }
-.section-nav .nav-tab {
+.nav-tab {
   border-radius: 26.5px;
   padding: 16px 25px 14px;
 }
-.section-nav .nav-tab a {
-  color: #d7e0ff;
+.nav-tab a {
   font-size: 14px;
   font-weight: bold;
+  line-height: 18px;
+  color: #d7e0ff;
   text-decoration: none;
 }
-.section-nav .nav-tab.active {
+.nav-tab.active {
   background: #f87070;
 }
-.section-nav .nav-tab.active a {
+.nav-tab.active a {
   color: #161932;
 }
-.section-main {
-  padding: 45px 0 63px;
-  position: relative;
-  z-index: -1;
-}
-.section-main .timer {
+
+/******************** TIMER ********************/
+.timer {
   background: linear-gradient(315deg, #2e325a, #0e112a);
   border-radius: 50%;
   box-shadow: -50px -50px 100px 0 #272c5a, 50px 50px 100px 0 #121530;
   height: 410px;
+  margin: 45px 0 63px;
   position: relative;
   width: 410px;
+  /* decorative inner circle */
 }
-.section-main .timer::before {
+.timer::before {
   background: #161932;
   border-radius: 50%;
   content: "";
@@ -64,7 +74,7 @@ body {
   top: 22px;
   width: 366px;
 }
-.section-main .timer-content {
+.timer-content {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -73,15 +83,14 @@ body {
   padding: 50px;
   position: relative;
 }
-.section-main .timer-content .time {
+.timer-content .time {
   font-size: 100px;
   font-weight: bold;
   letter-spacing: -5px;
-  line-height: 120px;
   line-height: 1;
   margin-top: 47px;
 }
-.section-main .timer-content .label {
+.timer-content .label {
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 15px;
@@ -89,7 +98,7 @@ body {
   text-transform: uppercase;
   margin-top: 25px;
 }
-.section-main .timer .svg-placeholder {
+.timer .svg-placeholder {
   border: solid 11px #f87070;
   border-radius: 50%;
   height: 339px;
@@ -98,224 +107,177 @@ body {
   top: 35.5px;
   width: 339px;
 }
-.section-footer {
-  flex-direction: column;
-  padding-bottom: 300px;
-}
-.section-footer .settings-icon {
-  margin-bottom: 40px;
-}
-.section-footer .settings-modal {
+
+/******************** SETTINGS MODAL ********************/
+.settings {
   background: #ffffff;
   border-radius: 25px;
-  padding: 38px 0 30px;
+  display: none;
+  padding: 38px 0 36px;
   position: relative;
   width: 540px;
 }
-.section-footer .settings-modal .settings-heading {
+.settings-header {
   align-items: flex-start;
   border-bottom: solid 1px #e3e1e1;
   display: flex;
   padding: 0 40px;
 }
-.section-footer .settings-modal .settings-heading h2 {
+.settings-header .heading {
+  color: #161932;
   font-size: 28px;
   font-weight: bold;
-  line-height: 34px;
-  color: #161932;
   line-height: 1;
   margin-bottom: 25px;
 }
-.section-footer .settings-modal .settings-heading .close-icon {
+.settings-header .close-icon {
   cursor: pointer;
   margin-left: auto;
 }
-.section-footer .settings-modal .settings-form {
+.settings-form {
   display: flex;
   flex-direction: column;
   padding: 0 40px;
+  /* settings form sections */
+  /* settings form number inputs */
+  /* settings form radio inputs */
 }
-.section-footer .settings-modal .settings-form .time-section {
+.settings-form .form-section {
+  align-items: center;
+  border-top: solid 1px #e3e1e1;
+  display: flex;
   padding: 24px 0;
 }
-.section-footer .settings-modal .settings-form .time-section h4 {
+.settings-form .form-section-heading {
+  color: #161932;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 5px;
   line-height: 16px;
   text-transform: uppercase;
-  color: #161932;
-  margin-bottom: 25px;
 }
-.section-footer .settings-modal .settings-form .time-section .time-dropdowns {
-  display: flex;
+.settings-form .form-section-time {
+  border-top: 0;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
-.section-footer .settings-modal .settings-form .time-section .time-dropdowns .input-group {
+.settings-form .form-section-time .form-section-heading {
+  margin-bottom: 25px;
+  width: 100%;
+}
+.settings-form .number-group {
   display: flex;
   flex-direction: column;
   width: 140px;
 }
-.section-footer .settings-modal .settings-form .time-section .time-dropdowns .input-group label {
-  color: #1e213f;
+.settings-form .number-group-label {
   font-size: 12px;
   font-weight: bold;
+  line-height: 14px;
+  color: #1e213f;
   opacity: 0.4;
   margin-bottom: 8px;
 }
-.section-footer .settings-modal .settings-form .time-section .time-dropdowns .input-group input {
+.settings-form .number-group-input {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
   background: #eff1fa;
   border: none;
   border-radius: 10px;
   color: #1e213f;
-  font-size: 14px;
-  font-weight: bold;
   padding: 15px;
 }
-.section-footer .settings-modal .settings-form .font-section {
-  align-items: center;
-  border-top: solid 1px #e3e1e1;
-  display: flex;
-  padding: 24px 0;
-}
-.section-footer .settings-modal .settings-form .font-section h4 {
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: #161932;
-}
-.section-footer .settings-modal .settings-form .font-section .font-radios {
+.settings-form .radio-group {
   display: flex;
   margin-left: auto;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input {
+.settings-form .radio-group .custom-radio {
   cursor: pointer;
-  height: 40px;
+  height: 38px;
   position: relative;
+  width: 38px;
+}
+.settings-form .radio-group .custom-radio::before {
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  left: -1px;
+  position: absolute;
+  top: -1px;
   width: 40px;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input:before {
-  background: #eff1fa;
+.settings-form .radio-group .custom-radio:not(:last-child) {
+  margin-right: 18px;
+}
+.settings-form .radio-group .custom-radio:hover::after {
+  border: solid 1px #eff1fa;
   border-radius: 50%;
+  content: "";
+  height: 50px;
+  left: -7px;
+  position: absolute;
+  top: -7px;
+  width: 50px;
+}
+.settings-form .form-section-font .custom-radio::before {
+  background: #eff1fa;
   color: #565971;
   content: "Aa";
-  height: 100%;
   font-size: 15px;
   font-weight: bold;
-  left: 0;
   line-height: 40px;
-  position: absolute;
   text-align: center;
-  top: 0;
-  width: 100%;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input#sans::before {
+.settings-form .form-section-font .custom-radio#sans::before {
   font-family: "Kumbh Sans", sans-serif;
   line-height: 46px;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input#slab::before {
+.settings-form .form-section-font .custom-radio#slab::before {
   font-family: "Roboto Slab", serif;
   font-weight: normal;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input#mono::before {
+.settings-form .form-section-font .custom-radio#mono::before {
   font-family: "Space Mono", monospace;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input:not(:last-child) {
-  margin-right: 16px;
-}
-.section-footer .settings-modal .settings-form .font-section .font-radios input.active::before {
+.settings-form .form-section-font .custom-radio.active::before {
   background: #161932;
   color: #ffffff;
 }
-.section-footer .settings-modal .settings-form .font-section .font-radios input:hover::after {
-  border: solid 1px #eff1fa;
-  border-radius: 50%;
+.settings-form .form-section-color .custom-radio::before {
   content: "";
-  height: 49px;
-  left: -5px;
-  position: absolute;
-  top: -6px;
-  width: 49px;
-}
-.section-footer .settings-modal .settings-form .color-section {
-  align-items: center;
-  border-top: solid 1px #e3e1e1;
-  display: flex;
-  padding: 24px 0 30px;
-}
-.section-footer .settings-modal .settings-form .color-section h4 {
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: #161932;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios {
-  display: flex;
-  margin-left: auto;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input {
-  cursor: pointer;
-  height: 40px;
-  position: relative;
-  width: 40px;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input:before {
-  border-radius: 50%;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input#red::before {
-  background: #f87070;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input#blue::before {
-  background: #70f3f8;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input#purple::before {
-  background: #d881f8;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input:not(:last-child) {
-  margin-right: 16px;
-}
-.section-footer .settings-modal .settings-form .color-section .color-radios input.active::before {
-  content: url("./../../assets/icon-checkmark.svg");
-  line-height: 41px;
+  line-height: 43px;
   text-align: center;
 }
-.section-footer .settings-modal .settings-form .color-section .color-radios input:hover::after {
-  border: solid 1px #eff1fa;
-  border-radius: 50%;
-  content: "";
-  height: 49px;
-  left: -5px;
-  position: absolute;
-  top: -6px;
-  width: 49px;
+.settings-form .form-section-color .custom-radio#red::before {
+  background: #f87070;
 }
-.section-footer .settings-modal .settings-form .settings-button {
+.settings-form .form-section-color .custom-radio#blue::before {
+  background: #70f3f8;
+}
+.settings-form .form-section-color .custom-radio#purple::before {
+  background: #d881f8;
+}
+.settings-form .form-section-color .custom-radio.active::before {
+  content: url("./../../assets/icon-checkmark.svg");
+}
+.settings-form .settings-button {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
   background: #f87070;
   bottom: -53px;
   border: none;
   border-radius: 26.5px;
-  color: #ffffff;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
   left: 50%;
   margin: 0 auto;
   padding: 20px 47px 17px;
   position: absolute;
   transform: translate(-50%, -50%);
 }
-.section-footer .settings-modal .settings-form .settings-button:hover {
-  background: #fa9999;
+.settings-form .settings-button:hover {
+  background: #f98383;
 }
 
 /*# sourceMappingURL=main.css.map */

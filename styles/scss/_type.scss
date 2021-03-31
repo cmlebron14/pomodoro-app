@@ -2,13 +2,14 @@
 	font-size: 100px;
 	font-weight: bold;
 	letter-spacing: -5px;
-	line-height: 120px;
+	line-height: 1;
 }
 
 @mixin heading-2 {
+	color: $mirage;
 	font-size: 28px;
 	font-weight: bold;
-	line-height: 34px;
+	line-height: 1;
 }
 
 @mixin heading-3 {
@@ -20,6 +21,7 @@
 }
 
 @mixin heading-4 {
+	color: $mirage;
 	font-size: 13px;
 	font-weight: bold;
 	letter-spacing: 5px;
@@ -37,4 +39,10 @@
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 14px;
+}
+
+@mixin button-text {
+	color: $white;
+	font-size: 16px;
+	font-weight: bold;
 }

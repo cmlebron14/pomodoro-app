@@ -10,17 +10,17 @@
   <title>Pomodoro Timer</title>
 </head>
 <body>
-  <header class="section section-header">
+  <header>
     <img src="./assets/logo.svg" alt="pomodoro" class="logo-icon">
   </header>
-  <nav class="section section-nav">
+  <nav>
     <ul class="nav">
       <li class="nav-tab active"><a href="">pomodoro</a></li>
       <li class="nav-tab"><a href="">short break</a></li>
       <li class="nav-tab"><a href="">long break</a></li>
     </ul>
   </nav>
-  <main class="section section-main">
+  <main>
     <div class="timer">
       <div class="svg-placeholder"></div>
       <div class="timer-content">
@@ -29,51 +29,54 @@
       </div>
     </div>
   </main>
-  <footer class="section section-footer">
+  <footer>
     <img src="./assets/icon-settings.svg" alt="gear icon" class="settings-icon">
-    <section class="settings-modal">
-      <div class="settings-heading">
-        <h2>Settings</h2>
+    <section class="settings">
+      <div class="settings-header">
+        <h2 class="heading">Settings</h2>
         <img src="./assets/icon-close.svg" alt="close icon" class="close-icon">
       </div>
       <form action="" class="settings-form">
-        <div class="time-section">
-          <h4>Time (minutes)</h4>
-          <div class="time-dropdowns">
-            <div class="input-group">
-              <label for="pomodoro">pomodoro</label>
-              <input type="number" name="pomodoro" id="pomodoro" value="25">
-            </div>
-            <div class="input-group">
-              <label for="short-break">short break</label>
-              <input type="number" name="short-break" id="short-break" value="5">
-            </div>
-            <div class="input-group">
-              <label for="long-break">long break</label>
-              <input type="number" name="long-break" id="long-break" value="15">
-            </div>
-          </div> <!-- end time dropdowns -->
-        </div> <!-- end time section -->
-        <div class="font-section">
-          <h4>Font</h4>
-          <div class="font-radios">
-            <input type="radio" name="font" id="sans" value="sans" class="active">
-            <input type="radio" name="font" id="slab" value="slab">
-            <input type="radio" name="font" id="mono" value="mono">
+        <div class="form-section form-section-time">
+        <h4 class="form-section-heading">Time (minutes)</h4>
+          <div class="number-group">
+            <label class="number-group-label" for="pomodoro">pomodoro</label>
+            <input class="number-group-input" type="number" name="pomodoro" id="pomodoro" value="25">
           </div>
-        </div> <!-- end font section -->
-        <div class="color-section">
-          <h4>Color</h4>
-          <div class="color-radios">
-            <input type="radio" name="color" id="red" value="red" class="active">
-            <input type="radio" name="color" id="blue" value="blue">
-            <input type="radio" name="color" id="purple" value="purple">
+          <div class="number-group">
+            <label class="number-group-label" for="short-break">short break</label>
+            <input class="number-group-input" type="number" name="short-break" id="short-break" value="5">
           </div>
-        </div> <!-- end color section -->
+          <div class="number-group">
+            <label class="number-group-label" for="long-break">long break</label>
+            <input class="number-group-input" type="number" name="long-break" id="long-break" value="15">
+          </div>
+        </div>
+
+        <div class="form-section form-section-font">
+          <h4 class="form-section-heading">Font</h4>
+          <div class="radio-group radio-group-font">
+            <input type="radio" name="font" id="sans" value="sans" class="custom-radio active">
+            <input type="radio" name="font" id="slab" value="slab" class="custom-radio">
+            <input type="radio" name="font" id="mono" value="mono" class="custom-radio">
+          </div>
+        </div>
+
+        <div class="form-section form-section-color">
+          <h4 class="form-section-heading">Color</h4>
+          <div class="radio-group radio-group-color">
+            <input type="radio" name="color" id="red" value="red" class="custom-radio active">
+            <input type="radio" name="color" id="blue" value="blue" class="custom-radio">
+            <input type="radio" name="color" id="purple" value="purple" class="custom-radio">
+          </div>
+        </div>
+
         <button type="submit" class="settings-button">Apply</button>
       </form>
     </section> <!-- end settings modal -->
   </footer>
+
+  <script src="./index.js"></script>
 
 </body>
 </html>
