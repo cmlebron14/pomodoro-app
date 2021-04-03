@@ -13,31 +13,38 @@ const toggleLabel = function() {
   } 
 }
 
-const countDown = function() {
-  let seconds = document.querySelector(".seconds");
-  let secondsHTML = seconds.innerHTML;
-  let minutes = document.querySelector(".minutes");
-  let minutesHTML = minutes.innerHTML;
-
-  secondsHTML--;
-  seconds.innerHTML = secondsHTML;
-}
-
-timer.addEventListener('click', function(e) {
-  toggleLabel();
-
-  /*countDown();
-  setInterval(function() {
-    countDown();
-  }, 1000);*/
-});
-
 //set the time (in seconds)
-//get the time (in seconds)
+
+//get the time + convert to total seconds
+const countDown = function() {
+  const minutes = document.querySelector(".minutes");
+  const seconds = document.querySelector(".seconds");
+
+  let modifiedMinutes = Number.parseInt(minutes.innerHTML);
+  let modifiedSeconds = Number.parseInt(seconds.innerHTML);
+
+  let totalSeconds = (modifiedMinutes * 60) + modifiedSeconds; // 1020 + 59 = 1079
+  totalSeconds--;
+
+  let newMinutes = Math.floor(totalSeconds / 60);
+  let newSeconds = totalSeconds % 60;
+
+  minutes.innerHTML = newMinutes;
+  seconds.innerHTML = newSeconds;
+};
+
 //convert the time to a usable format
 //output the timer data as a reusable object
 //display the clock on the page
 //stop the clock when it reaches zero
+
+timer.addEventListener('click', function(e) {
+  toggleLabel();
+
+  countDown();
+  setInterval(countDown, 1000);
+});
+
 
 
 /****************************
